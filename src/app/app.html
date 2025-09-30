@@ -71,3 +71,208 @@
     </div>
   </div>
 </section>
+
+<section id="sobre" class="container">
+  <div class="d-flex flex-column fs-5 my-auto">
+    <h2 class="display-5 fw-bold text-center">Sobre Mim</h2>
+    <p class="mt-5">
+      Olá! Meu nome é <strong>Tiago Santini</strong>, sou Desenvolvedor Full-Stack e também
+      professor no curso da <strong>Academia do Programador</strong>. Estou no mundo da programação
+      há 6 anos e trabalho na área há 4 anos, passando a maior parte deste tempo desenvolvimento
+      sistemas internos e a programação do curso.
+    </p>
+
+    <p>
+      Trabalho principalmente com a <strong>Plataforma .NET</strong> — com os frameworks MVC, Blazor
+      e Web API — além de <strong>TypeScript</strong> com Node.js e Angular.
+    </p>
+
+    <p>
+      Também tenho experiência com bancos de dados <strong>SQL</strong> (SQL Server, MySQL,
+      Postgres, SQLite) e <strong>NoSQL</strong> (MongoDB)... alêm de experiência com aspectos de
+      DevOps como <strong>GitHub Actions</strong> e <strong>Docker</strong>.
+    </p>
+  </div>
+</section>
+
+<section
+  id="habilidades"
+  class="app-background-secundario d-flex justify-content-center align-items-center"
+>
+  <div class="container my-5">
+    <h2 class="display-5 fw-bold text-center">Minhas habilidades</h2>
+
+    <div class="row row-cols-1 row-cols-lg-2 g-5 mt-5 mx-2">
+      @for (item of itensHabilidades; track $index) {
+        <div class="d-flex align-items-center gap-4">
+          <span>
+            <i class="bi {{ item.icone }} fs-1"></i>
+          </span>
+
+          <div class="d-flex flex-column">
+            <label class="fs-4 fw-semibold">{{ item.titulo }}</label>
+
+            <small class="fs-5">{{ item.descricao }}</small>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<section id="habilidades" class="container my-5">
+  <div class="d-flex flex-column my-auto">
+    <h2 class="display-5 fw-bold text-center">Habilidades Técnicas</h2>
+
+    <p class="fs-5 mt-5 ps-3">
+      Aqui, você poderá conhecer as principais habilidades que desenvolvi ao longo da minha jornada
+      como desenvolvedor. Abaixo apresento as ferramentas, frameworks e tecnologias que utilizo.
+    </p>
+
+    <div class="d-flex flex-wrap justify-content-center align-items-center gap-3 mt-5">
+      @for (itemHabilidade of itensHabilidades2; track $index) {
+        <div class="d-flex flex-column align-items-center gap-2">
+          <img width="75" [src]="itemHabilidade.icone" [alt]="itemHabilidade.titulo" />
+          <span>{{ itemHabilidade.titulo }}</span>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<section id="portfolio" class="app-background-secundario">
+  <div class="container d-flex flex-column my-auto">
+    <span class="display-5 fw-bold text-center">Portfólio</span>
+
+    <p class="fs-5 mt-5">
+      Nesta seção, apresento os projetos dos quais participei e que refletem minha experiência e
+      habilidades como desenvolvedor. Ao clicar em cada card, um modal será exibido, proporcionando
+      uma visualização detalhada do funcionamento de cada projeto. Cada trabalho representou uma
+      oportunidade de aprendizado e inovação!
+    </p>
+
+    <div class="row justify-content-center g-3 mt-5">
+      @for (item of itensPortfolio; track $index) {
+        <div class="col-lg-6">
+          <div class="card rounded-4 h-100">
+            <img
+              id="imgCard"
+              class="card-img-top rounded-top-4"
+              style="max-height: 250px"
+              [src]="item.urlImagem"
+            />
+            <div class="card-body d-flex flex-column gap-2 h-100">
+              <span id="stackCard" class="d-flex gap-1">
+                @for (itemStack of item.stack; track $index) {
+                  <img [src]="itemStack" width="35px;" />
+                }
+              </span>
+              <h5 id="tituloCard" class="card-title mt-2">{{ item.titulo }}</h5>
+              <div class="d-flex gap-2 mt-auto">
+                <button
+                  type="button"
+                  (click)="itemPortfolioSelecionado = item"
+                  class="btn px-4 app-btn-principal"
+                  data-bs-toggle="modal"
+                  data-bs-target="#portfolioModal"
+                  id="btnVerProjeto"
+                >
+                  <i class="bi bi-window-plus"></i>
+                  Ver projeto
+                </button>
+                <a
+                  id="urlRepositorio"
+                  [href]="item.urlRepositorio"
+                  target="_blank"
+                  class="btn btn-outline-light"
+                >
+                  <i class="bi bi-github"></i>
+                  Repositório
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<div
+  class="modal fade"
+  id="portfolioModal"
+  tabindex="-1"
+  aria-labelledby="portfolioModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-md">
+    <div class="modal-content bg-dark text-white rounded-4">
+      <div class="modal-header">
+        <h5 class="modal-title" id="portfolioModalLabel">{{ itemPortfolioSelecionado?.titulo }}</h5>
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          data-bs-dismiss="modal"
+          aria-label="Fechar"
+        ></button>
+      </div>
+      <div class="modal-body text-center rounded-bottom-4 modal-body-customizado">
+        <img
+          id="portfolioModalImage"
+          [src]="itemPortfolioSelecionado?.urlImagem"
+          alt="Imagem do Projeto"
+          class="img-fluid mb-3"
+        />
+
+        <span id="stackCard" class="d-flex justify-content-center gap-1 mb-2">
+          @for (itemStack of itemPortfolioSelecionado?.stack; track $index) {
+            <img [src]="itemStack" width="35px;" />
+          }
+        </span>
+
+        <p>{{ itemPortfolioSelecionado?.descricao }}</p>
+
+        <a
+          id="urlRepositorio"
+          [href]="itemPortfolioSelecionado?.urlRepositorio"
+          target="_blank"
+          class="btn btn-outline-light"
+        >
+          <i class="bi bi-github"></i>
+          Repositório
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="contato" class="flex-column text-center">
+  <div class="container my-auto">
+    <span class="text-white fw-bold display-5 text-center">Contato</span>
+
+    <div class="d-flex justify-content-center align-items-center mt-5 fs-5">
+      <i class="bi bi-telephone"></i>
+      <span class="text-white ps-2">(49) 9 98505-6251</span>
+    </div>
+
+    <div class="d-flex justify-content-center align-items-center mt-3 fs-5">
+      <i class="bi bi-envelope-at"></i>
+      <span class="text-white ps-2">tiago&#64;academiadoprogramador.net</span>
+    </div>
+
+    <div class="d-flex justify-content-center align-items-center mt-3 fs-5">
+      <i class="bi bi-pin-map"></i>
+      <span class="text-white ps-2">Lages - SC - Brasil</span>
+    </div>
+
+    <div class="d-flex justify-content-center mt-5">
+      <a target="_blank" href="https://github.com/tiagosantini">
+        <img alt="Github logo" src="github.png" />
+      </a>
+
+      <a target="_blank" href="https://linkedin.com/in/tiagosantini">
+        <img alt="Linkedin logo" src="linkedin.png" />
+      </a>
+    </div>
+  </div>
+</section>
