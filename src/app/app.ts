@@ -54,7 +54,7 @@ export class App {
     },
   ];
 
-  public itensHabilidades2: ItemHabilidade[] = [
+  public iconesHabilidades: ItemHabilidade[] = [
     {
       icone: 'https://skillicons.dev/icons?i=html&theme=dark',
       titulo: 'HTML',

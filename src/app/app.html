@@ -130,10 +130,10 @@
     </p>
 
     <div class="d-flex flex-wrap justify-content-center align-items-center gap-3 mt-5">
-      @for (itemHabilidade of itensHabilidades2; track $index) {
+      @for (iconeHabilidade of iconesHabilidades; track $index) {
         <div class="d-flex flex-column align-items-center gap-2">
-          <img width="75" [src]="itemHabilidade.icone" [alt]="itemHabilidade.titulo" />
-          <span>{{ itemHabilidade.titulo }}</span>
+          <img width="75" [src]="iconeHabilidade.icone" [alt]="iconeHabilidade.titulo" />
+          <span>{{ iconeHabilidade.titulo }}</span>
         </div>
       }
     </div>
