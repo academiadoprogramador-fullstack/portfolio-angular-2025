@@ -10,7 +10,7 @@ export class Portfolio {
   public itensPortfolio: ItemPortfolio[] = [
     {
       titulo: 'Controle de Medicamentos',
-      urlImagem: 'controle-de-medicamentos.png',
+      urlImagem: 'img/controle-de-medicamentos.png',
       urlGif: 'https://i.imgur.com/SDgwx8m.gif',
       urlRepositorio:
         'https://github.com/academiadoprogramador-fullstack/controle-de-medicamentos-2025',
@@ -24,7 +24,7 @@ export class Portfolio {
     },
     {
       titulo: 'Gestão de Equipamentos',
-      urlImagem: 'gestao-de-equipamentos.png',
+      urlImagem: 'img/gestao-de-equipamentos.png',
       urlGif: '',
       urlRepositorio:
         'https://github.com/academiadoprogramador-fullstack/gestao-de-equipamentos-2025',
