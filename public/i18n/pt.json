@@ -1,0 +1,18 @@
+{
+  "navbar": {
+    "home": "Início",
+    "about": "Sobre",
+    "skills": "Habilidades",
+    "portfolio": "Portfólio",
+    "contact": "Contato"
+  },
+  "banner": {
+    "introduction": "Olá, eu sou <strong>Tiago Santini</strong>!",
+    "occupation": "Desenvolvedor e Professor.",
+    "buttonText": "Contate-me!"
+  },
+  "about": {
+    "title": "Sobre Mim",
+    "text": "Olá! Meu nome é <strong>Tiago Santini</strong>, sou Desenvolvedor Full-Stack e também professor no curso da <strong>Academia do Programador</strong>. Estou no mundo da programação há 6 anos e trabalho na área há 4 anos, passando a maior parte deste tempo desenvolvimento sistemas internos e a programação do curso.\nTrabalho principalmente com a Plataforma .NET — com os frameworks MVC, Blazor e Web API — além de TypeScript com Node.js e Angular.\nTambém tenho experiência com bancos de dados SQL (SQL Server, MySQL, Postgres, SQLite) e NoSQL (MongoDB)... alêm de experiência com aspectos de DevOps como GitHub Actions e Docker."
+  }
+}

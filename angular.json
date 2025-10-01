@@ -22,6 +22,7 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
+              "src/assets",
               {
                 "glob": "**/*",
                 "input": "public"
@@ -48,6 +49,7 @@
               "outputHashing": "all"
             },
             "development": {
+              "outputHashing": "media",
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true

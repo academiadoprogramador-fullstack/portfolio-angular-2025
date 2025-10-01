@@ -1,22 +1,6 @@
-<section id="sobre" class="container">
+<section id="sobre" class="container" *transloco="let t; prefix: 'about'">
   <div class="d-flex flex-column fs-5 my-auto">
-    <h2 class="display-5 fw-bold text-center">Sobre Mim</h2>
-    <p class="mt-5">
-      Olá! Meu nome é <strong>Tiago Santini</strong>, sou Desenvolvedor Full-Stack e também
-      professor no curso da <strong>Academia do Programador</strong>. Estou no mundo da programação
-      há 6 anos e trabalho na área há 4 anos, passando a maior parte deste tempo desenvolvimento
-      sistemas internos e a programação do curso.
-    </p>
-
-    <p>
-      Trabalho principalmente com a <strong>Plataforma .NET</strong> — com os frameworks MVC, Blazor
-      e Web API — além de <strong>TypeScript</strong> com Node.js e Angular.
-    </p>
-
-    <p>
-      Também tenho experiência com bancos de dados <strong>SQL</strong> (SQL Server, MySQL,
-      Postgres, SQLite) e <strong>NoSQL</strong> (MongoDB)... alêm de experiência com aspectos de
-      DevOps como <strong>GitHub Actions</strong> e <strong>Docker</strong>.
-    </p>
+    <h2 class="display-5 fw-bold text-center">{{ t('title') }}</h2>
+    <p class="mt-5" [innerHTML]="t('text')"></p>
   </div>
 </section>

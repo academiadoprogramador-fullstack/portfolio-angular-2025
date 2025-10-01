@@ -1,0 +1,18 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "portfolio": "Portfolio",
+    "contact": "Contact Me"
+  },
+  "banner": {
+    "introduction": "Hi, i'm <strong>Tiago Santini</strong>!",
+    "occupation": "Developer and Teacher.",
+    "buttonText": "Contact Me!"
+  },
+  "about": {
+    "title": "About Me",
+    "text": "My name is <strong>Tiago Santini</strong>, i'm a Full-Stack Developer and also teach at <strong>Academia do Programador</strong>. I've joined the programming world in 2019 and work in the industry since 2021.\nMy main experience is with the .NET environment — MVC, Blazor and Web API — along with TypeScript, Node.js and Angular.\nI also have experience with SQL Databases (SQL Server, MySQL, Postgres, SQLite) and NoSQL (MongoDB)... along with knowing how to work with GitHub Actions and Docker."
+  }
+}
