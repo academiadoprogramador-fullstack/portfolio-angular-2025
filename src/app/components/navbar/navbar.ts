@@ -11,5 +11,7 @@ export class Navbar {
 
   public trocarLinguagem(locale: string) {
     this.translocoService.setActiveLang(locale);
+
+    localStorage.setItem('portfolio:locale', locale);
   }
 }
